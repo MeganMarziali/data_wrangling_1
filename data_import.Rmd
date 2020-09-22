@@ -48,7 +48,7 @@ Let's read in an Excel file.
 Better to load entire package for the readxl case, as sometimes there are helper functions working in the background.
 
 ```{r}
-mlb_df = read_excel("./data/mlb11.xlsx")
+mlb_df = read_excel("./data/mlb11.xlsx", range = "A1:F7")
 ```
 
 Read in a SAS file.
@@ -65,4 +65,14 @@ What about `read.csv` ... ? Never use. Base R version is more difficult to look 
 litters_base = read.csv("./data/FAS_litters.csv")
 litters_readr = read_csv("./data/FAS_litters.csv")
 ```
+
+## Exporting data
+
+Export the mlb sub-table.
+
+```{r}
+write_csv(mlb_df, "./data/mlb_sub.csv")
+```
+
+
 
