@@ -16,6 +16,11 @@ library(tidyverse)
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
+``` r
+library(readxl)
+library(haven)
+```
+
 ## Read in some data
 
 Read in the litters dataset.
@@ -137,3 +142,19 @@ litters_df = read_csv("./data/FAS_litters.csv",
     ##   X7 = col_double(),
     ##   X8 = col_double()
     ## )
+
+## Other file formats
+
+Let’s read in an Excel file. Better to load entire package for the
+readxl case, as sometimes there are helper functions working in the
+background.
+
+``` r
+mlb_df = read_excel("./data/mlb11.xlsx")
+```
+
+Read in a SAS file.
+
+``` r
+pulse_df = read_sas("./data/public_pulse_data.sas7bdat")
+```
