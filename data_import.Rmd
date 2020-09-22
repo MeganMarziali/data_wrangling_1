@@ -57,4 +57,12 @@ Read in a SAS file.
 pulse_df = read_sas("./data/public_pulse_data.sas7bdat")
 ```
 
+## Comparison with Base R
+
+What about `read.csv` ... ? Never use. Base R version is more difficult to look at.
+
+```{r}
+litters_base = read.csv("./data/FAS_litters.csv")
+litters_readr = read_csv("./data/FAS_litters.csv")
+```
 
