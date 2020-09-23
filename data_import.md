@@ -150,7 +150,7 @@ readxl case, as sometimes there are helper functions working in the
 background.
 
 ``` r
-mlb_df = read_excel("./data/mlb11.xlsx")
+mlb_df = read_excel("./data/mlb11.xlsx", range = "A1:F7")
 ```
 
 Read in a SAS file.
@@ -180,3 +180,11 @@ litters_readr = read_csv("./data/FAS_litters.csv")
     ##   `Pups dead @ birth` = col_double(),
     ##   `Pups survive` = col_double()
     ## )
+
+## Exporting data
+
+Export the mlb sub-table.
+
+``` r
+write_csv(mlb_df, "./data/mlb_sub.csv")
+```
